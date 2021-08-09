@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2018",
+    "lib": ["ESNext", "DOM"],
+    "downlevelIteration": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@root/*": ["./src/*"],
+      "@application/*": ["./src/application/*"],
+      "@system/*": ["./src/system/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@tools/*": ["./src/tools/*"]
+    }
+  }
+}
