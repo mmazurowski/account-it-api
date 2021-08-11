@@ -47,6 +47,8 @@ export class RegisterModulesProcedure extends Procedure<AwilixContainer, AwilixC
 
     const applicationCommandHandlers = modules.flatMap(({ commandHandlers }) => commandHandlers);
     const applicationQueryHandlers = modules.flatMap(({ queryHandlers }) => queryHandlers);
+    const applicationSubscribers = modules.flatMap(({ subscribers }) => subscribers);
+
     container.register(
       'commandHandlers',
       registerAsArray(applicationCommandHandlers.map((handler) => Awilix.asClass(handler))),
@@ -55,6 +57,11 @@ export class RegisterModulesProcedure extends Procedure<AwilixContainer, AwilixC
       'queryHandlers',
       registerAsArray(applicationQueryHandlers.map((handler) => Awilix.asClass(handler))),
     );
+    container.register(
+      'domainSubscribers',
+      registerAsArray(applicationSubscribers.map((handler) => Awilix.asClass(handler))),
+    );
+
     container
       .resolve<CommandHandler<Command<unknown>>[]>('commandHandlers')
       .forEach((handler) => cqrsbus.registerHandler(handler));
