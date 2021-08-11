@@ -10,6 +10,7 @@ import {
   requestIdMiddleware,
 } from '@application/server/rest/middlewares/request-id.middleware';
 import { logger } from '@application/logger/logger';
+import { DomainServiceImpl } from '@application/ddd/domain-service/domain.service';
 
 export class BindSystemCoreDependenciesProcedure extends Procedure<
   AwilixContainer,
@@ -19,6 +20,7 @@ export class BindSystemCoreDependenciesProcedure extends Procedure<
     container.register({
       server: Awilix.asValue(express()),
       cqrsBus: Awilix.asValue(new CQRSBus()),
+      domainService: Awilix.asClass(DomainServiceImpl).singleton(),
       logger: Awilix.asValue(logger),
       errorMiddleware: Awilix.asFunction(errorMiddleware),
       requestIdMiddleware: Awilix.asFunction(requestIdMiddleware),
