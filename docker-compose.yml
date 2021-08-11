@@ -1,13 +1,13 @@
 version: "3.5"
 services:
   postgres:
-    image: postgres:13.2
+    image: postgres
     ports:
-    - $POSTGRES_PORT:5432
+    - $DATABASE_PORT:5432
     environment:
-      - POSTGRES_DB=$POSTGRES_DATABASE_NAME
-      - POSTGRES_USER=$POSTGRES_USER
-      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_DB=$DATABASE_NAME
+      - POSTGRES_USER=$DATABASE_USER
+      - POSTGRES_PASSWORD=$DATABASE_PASSWORD
     volumes:
     - ./src/database:/docker-entrypoint-initdb.d/
   mongo:
@@ -17,3 +17,4 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=$MONGO_USER
       - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+      - MONGO_INITDB_DATABASE=$MONGO_DATABASE

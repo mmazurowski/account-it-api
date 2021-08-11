@@ -17,6 +17,17 @@ export interface ProcessEnvironments {
   LOG_LEVEL: 'error' | 'debug' | 'log' | 'warn' | 'verbose' | 'info';
 
   CORS_WHITELIST: string;
+
+  DATABASE_HOST: string;
+  DATABASE_NAME: string;
+  DATABASE_USER: string;
+  DATABASE_PASSWORD: string;
+  DATABASE_PORT: number;
+
+  MONGO_USER: string;
+  MONGO_PORT: number;
+  MONGO_PASSWORD: string;
+  MONGO_DATABASE: string;
 }
 
 declare namespace NodeJS {

@@ -5,6 +5,7 @@ import { BindSystemCoreDependenciesProcedure } from '@system/procedures/bind-sys
 import { RegisterModulesProcedure } from '@system/procedures/register-modules.procedure';
 import { PrepareServerProcedure } from '@system/procedures/prepare-server.procedure';
 import { HandleExitProcedure } from '@system/procedures/handle-exit.procedure';
+import { SetupOrmProcedure } from '@system/procedures/setup-orm.procedure';
 
 const baseRuntime = [
   new SetupDIContainerProcedure(),
@@ -12,6 +13,7 @@ const baseRuntime = [
   new HandleExitProcedure(),
   new RegisterModulesProcedure(),
   new PrepareServerProcedure(),
+  new SetupOrmProcedure(),
 ];
 
 export { baseRuntime };
