@@ -6,8 +6,6 @@ import { ApplicationError } from '@application/errors/application-error.error';
 export abstract class ValueObject<T> {
   public constructor(protected readonly props: T) {}
 
-  public abstract toJSON(): object;
-
   public static async checkBusinessRule(
     rule: BusinessRule,
     ErrorType: typeof ApplicationError = BusinessRuleValidationError,

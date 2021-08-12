@@ -6,7 +6,7 @@
 # Docs, workflows, IAC
 .github
 infrastructure
-database
+src/database
 readme.md
 dist
 .cache
