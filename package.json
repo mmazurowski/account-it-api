@@ -17,6 +17,7 @@
   "dependencies": {
     "@lunar-flight-v/command-module": "0.1.2",
     "@lunar-flight-v/system": "0.1.5",
+    "amqplib": "^0.8.0",
     "argon2": "^0.28.2",
     "awilix": "4.2.7",
     "body-parser": "1.19.0",
@@ -37,6 +38,7 @@
     "winston": "3.3.3"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.8.1",
     "@types/body-parser": "1.19.0",
     "@types/compression": "1.7.0",
     "@types/cors": "2.8.8",
@@ -67,10 +69,10 @@
   },
   "_moduleAliases": {
     "@root": "dist",
-    "@application": "dist/application",
-    "@system": "dist/system",
-    "@modules": "dist/modules",
-    "@tools": "dist/tools"
+    "@application": "dist/shared/application",
+    "@system": "dist/shared/system",
+    "@modules": "dist/shared/modules",
+    "@tools": "dist/shared/tools"
   },
   "repository": {
     "type": "git",

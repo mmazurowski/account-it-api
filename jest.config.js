@@ -12,9 +12,9 @@ module.exports = {
   },
   moduleNameMapper: {
     '@root/(.*)': '<rootDir>/src/$1',
-    '@application/(.*)': '<rootDir>/src/application/$1',
-    '@system/(.*)': '<rootDir>/src/system/$1',
+    '@application/(.*)': '<rootDir>/src/shared/application/$1',
+    '@system/(.*)': '<rootDir>/src/shared/system/$1',
     '@modules/(.*)': '<rootDir>/src/modules/$1',
-    '@tools/(.*)': '<rootDir>/src/tools/$1',
+    '@tools/(.*)': '<rootDir>/src/shared/tools/$1',
   },
 };

@@ -10,6 +10,7 @@ export type NodeEnvType = Environment;
 
 export interface ProcessEnvironments {
   NODE_ENV: NodeEnvType;
+  SERVICE_NAME: string;
 
   APP_HOST: string;
   APP_PORT: number;
@@ -28,6 +29,10 @@ export interface ProcessEnvironments {
   MONGO_PORT: number;
   MONGO_PASSWORD: string;
   MONGO_DATABASE: string;
+
+  MESSAGE_HOST: string;
+  MESSAGE_BROKER_PORT: string;
+  MESSAGE_BROKER_ADMIN_PORT: string;
 }
 
 declare namespace NodeJS {
