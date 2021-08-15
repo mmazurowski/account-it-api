@@ -19,14 +19,12 @@ interface Dependencies {
 }
 
 export class RegisterCompanyAsServiceProviderCommandHandler extends CommandHandler<
+  Dependencies,
   RegisterCompanyAsServiceProviderCommand
 > {
-  constructor(private readonly dependencies: Dependencies) {
-    super(REGISTER_COMPANY_AS_SERVICE_PROVIDER_COMMAND);
-  }
+  key = REGISTER_COMPANY_AS_SERVICE_PROVIDER_COMMAND;
 
-  public async handle(command: RegisterCompanyAsServiceProviderCommand): Promise<void> {
-    const payload = command.getPayload();
+  public async handle({ payload }: RegisterCompanyAsServiceProviderCommand): Promise<void> {
     const {
       domainService,
       uniqueTaxIdsCheckerService,
