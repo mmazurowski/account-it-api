@@ -1,4 +1,3 @@
-import { CommandHandler } from '@lunar-flight-v/command-module';
 import {
   REGISTER_COMPANY_AS_SERVICE_PROVIDER_COMMAND,
   RegisterCompanyAsServiceProviderCommand,
@@ -9,6 +8,7 @@ import { UniqueTaxIdsCheckerService } from '@modules/service-provider-access/reg
 import { PasswordService } from '@modules/service-provider-access/registration/core/services/password.service';
 import { AccountingCompanyRepository } from '@modules/service-provider-access/registration/core/accounting-company.repository';
 import { UniqueEmailCheckerService } from '@modules/service-provider-access/registration/core/services/unique-email-checker.service';
+import { CommandHandler } from '@lunar-flight-v/command-module';
 
 interface Dependencies {
   domainService: DomainService;
