@@ -4,45 +4,36 @@
 
 # AccountIT - API
 
-## Installing / Getting started
+Main goal of the project is to expose API for Accounting SaaS.  
+Built with DDD, Clean Architecture and Event Driven Architecture in mind.
+
+## ⚒️ Project requirements
 
 ```
-Requirements
 1. Node >= 14
 2. Docker >= 20.10.7
 3. NPM >= 7.20.3
 ```
 
-## Developing
+## 📚 Documentation
 
-Application by default listens on localhost port 4000, this can be easily altered based on environmental variables
+Table of contents
 
-```
-git clone git@github.com:mmazurowski/account-it-api.git
-npm i
-npm run dev
-```
+1. [Architecture Guide](docs/architecture.md)
+2. [Configuration](docs/configuration.md)
+3. [Docker](docs/docker.md)
+4. [One Pager](docs/one-page-introduction.md)
+5. [Enterprise Bus](docs/enterprise-bus.md)
 
-## Configuration
+## 📜 NPM Scripts
 
-Make sure you're keeping you environmental variables up to date
-
-```
-NODE_ENV=development
-
-APP_PORT=4000
-APP_HOST=http://localhost
-CORS_WHITELIST=
-
-// this could be automated to always reflect .env.example
-```
-
-## Building
-
-Building application
-`npm run build`  
-You can build docker with following command: `docker build -t account-it-api:latest .`
-
-## Running
-
-Running container `docker run -v $(pwd)/database:/home/app/database -p 4000:4000 -e NODE_ENV=production account-it-api:latest`
+1. **start** - Starts compiled application
+2. **dev** - Starts Nodemon in watch mode
+3. **build** - Builds application using Typescript Compiler
+4. **test** - Starts tests
+5. **test:ci** - Starts tests (used in CI environment)
+6. **test:watch** - Starts local tests in watch mode
+7. **lint** - Lints source files
+8. **lint:fix** - Lints files and performs fixes
+9. **typecheck** - Performs typecheck in source files
+10. **prepare** - Husky hook, used internally to maintain GitHooks

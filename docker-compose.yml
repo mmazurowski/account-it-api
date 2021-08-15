@@ -1,5 +1,14 @@
 version: "3.5"
 services:
+  message-broker:
+    image: rabbitmq:3.9-management
+    hostname: rabbit-broker
+    ports:
+    - $MESSAGE_BROKER_PORT:5672
+    - $MESSAGE_BROKER_ADMIN_PORT:15672
+    volumes:
+      - ./docker/rabbit-mq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+      - ./docker/rabbit-mq/rabbitmq.conf:/etc/rabbitmq/conf.d/rabbitmq.conf
   postgres:
     image: postgres
     ports:

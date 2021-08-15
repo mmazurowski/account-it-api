@@ -17,10 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@root/*": ["./src/*"],
-      "@application/*": ["./src/application/*"],
-      "@system/*": ["./src/system/*"],
-      "@modules/*": ["./src/modules/*"],
-      "@tools/*": ["./src/tools/*"]
+      "@application/*": ["./src/shared/application/*"],
+      "@system/*": ["./src/shared/system/*"],
+      "@tools/*": ["./src/shared/tools/*"],
+      "@modules/*": ["./src/modules/*"]
     }
   }
 }
