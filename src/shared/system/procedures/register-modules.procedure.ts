@@ -86,10 +86,10 @@ export class RegisterModulesProcedure extends Procedure<AwilixContainer, AwilixC
     );
 
     container
-      .resolve<CommandHandler<Command<unknown>>[]>('commandHandlers')
+      .resolve<CommandHandler<unknown, Command<unknown>>[]>('commandHandlers')
       .forEach((handler) => cqrsbus.registerHandler(handler));
     container
-      .resolve<QueryHandler<Query<unknown>>[]>('queryHandlers')
+      .resolve<QueryHandler<unknown, Query<unknown>>[]>('queryHandlers')
       .forEach((handler) => cqrsbus.registerHandler(handler));
 
     return container;

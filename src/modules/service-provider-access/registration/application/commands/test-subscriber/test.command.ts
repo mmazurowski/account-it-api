@@ -8,7 +8,5 @@ interface Payload {
 export const TEST_COMMAND = 'test';
 
 export class TestCommand extends Command<Payload> {
-  constructor(props: Payload) {
-    super(TEST_COMMAND, props);
-  }
+  key = TEST_COMMAND;
 }

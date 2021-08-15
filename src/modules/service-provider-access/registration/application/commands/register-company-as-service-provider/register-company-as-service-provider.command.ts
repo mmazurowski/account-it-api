@@ -15,7 +15,5 @@ interface Payload {
 export const REGISTER_COMPANY_AS_SERVICE_PROVIDER_COMMAND = 'service-provider-access/registration';
 
 export class RegisterCompanyAsServiceProviderCommand extends Command<Payload> {
-  constructor(props: Payload) {
-    super(REGISTER_COMPANY_AS_SERVICE_PROVIDER_COMMAND, props);
-  }
+  key = REGISTER_COMPANY_AS_SERVICE_PROVIDER_COMMAND;
 }

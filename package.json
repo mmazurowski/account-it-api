@@ -15,8 +15,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@lunar-flight-v/command-module": "0.1.2",
-    "@lunar-flight-v/system": "0.1.5",
+    "@lunar-flight-v/command-module": "0.2.0",
+    "@lunar-flight-v/system": "0.2.0",
     "amqplib": "^0.8.0",
     "argon2": "^0.28.2",
     "awilix": "4.2.7",

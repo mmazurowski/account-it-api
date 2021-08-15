@@ -6,8 +6,8 @@ import { MessageBrokerSubscriber } from '@application/message-broker/message-bro
 
 export interface ApplicationModule {
   controllers: Constructor<ExpressController>[];
-  commandHandlers: Constructor<CommandHandler<any>>[];
-  queryHandlers: Constructor<QueryHandler<any>>[];
+  commandHandlers: Constructor<CommandHandler<unknown, any>>[];
+  queryHandlers: Constructor<QueryHandler<unknown, any>>[];
   subscribers: Constructor<MessageBrokerSubscriber<unknown, unknown>>[];
   repositories: { [key in string]: Awilix.Resolver<any> };
   readModels: { [key in string]: Awilix.Resolver<any> };

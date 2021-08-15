@@ -4,13 +4,10 @@ import {
   TestCommand,
 } from '@modules/service-provider-access/registration/application/commands/test-subscriber/test.command';
 
-export class TestCommandHandler extends CommandHandler<TestCommand> {
-  constructor() {
-    super(TEST_COMMAND);
-  }
+export class TestCommandHandler extends CommandHandler<{}, TestCommand> {
+  key = TEST_COMMAND;
 
-  public async handle(command: TestCommand): Promise<void> {
-    const payload = command.getPayload();
+  public async handle({ payload }: TestCommand): Promise<void> {
     // eslint-disable-next-line no-console
     console.log('subscribed!', payload);
   }
