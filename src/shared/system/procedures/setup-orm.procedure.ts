@@ -7,7 +7,7 @@ export class SetupOrmProcedure extends Procedure<Awilix.AwilixContainer, Awilix.
   async run(container: AwilixContainer): Promise<AwilixContainer> {
     const entitiesPaths =
       process.env.NODE_ENV === 'development'
-        ? ['src/modules/**/**/**/infrastructure/database/*.entity.ts']
+        ? ['src/modules/**/**/**/infrastructure/entities/*.entity.ts']
         : ['dist/modules/**/**/**/infrastructure/database/*.entity.js'];
 
     await createConnection({

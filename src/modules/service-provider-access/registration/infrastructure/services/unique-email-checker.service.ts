@@ -6,8 +6,8 @@ export class UniqueEmailCheckerServiceImpl implements UniqueEmailCheckerService 
     const count = await getConnection()
       .createQueryBuilder()
       .select('email')
-      .from('service_provider', 'sp')
-      .where('sp.email=:email', { email })
+      .from('account', 'ac')
+      .where('ac.email=:email', { email })
       .getCount();
 
     return count === 0;

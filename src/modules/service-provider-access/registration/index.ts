@@ -4,7 +4,7 @@ import * as Awilix from 'awilix';
 import { UniqueTaxIdsCheckerServiceImpl } from '@modules/service-provider-access/registration/infrastructure/services/unique-tax-ids-checker.service';
 import { RegisterCompanyAsServiceProviderCommandHandler } from '@modules/service-provider-access/registration/application/commands/register-company-as-service-provider/register-company-as-service-provider.command-handler';
 import { RegistrationController } from '@modules/service-provider-access/registration/adapters/rest/registration.controller';
-import { AccountingCompanyRepositoryImpl } from '@modules/service-provider-access/registration/infrastructure/database/accounting-company.repository';
+import { AccountingCompanyRepositoryImpl } from '@modules/service-provider-access/registration/infrastructure/repositories/accounting-company.repository';
 import { UniqueEmailCheckerServiceImpl } from '@modules/service-provider-access/registration/infrastructure/services/unique-email-checker.service';
 import { TestSubscriber } from '@modules/service-provider-access/registration/adapters/event-bus/test.subscriber';
 import { TestCommandHandler } from '@modules/service-provider-access/registration/application/commands/test-subscriber/test.command-handler';
