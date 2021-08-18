@@ -1,8 +1,6 @@
 import { UniqueTaxIdsCheckerService } from '@modules/service-provider-access/registration/core/services/unique-tax-ids-checker.service';
 import { getConnection } from 'typeorm';
 
-// TODO: implement logic here
-
 export class UniqueTaxIdsCheckerServiceImpl implements UniqueTaxIdsCheckerService {
   public async isTaxIDUnique(id: string): Promise<boolean> {
     const count = await getConnection()
