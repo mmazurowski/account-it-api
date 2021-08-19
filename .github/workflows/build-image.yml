@@ -1,0 +1,22 @@
+name: Build Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Login to Docker Image Repository
+        run: doctl registry login
+      - name: Build image
+        run: bin/build latest production
+      - name: Publish image to registry
+        run: bin/publish-image latest production
