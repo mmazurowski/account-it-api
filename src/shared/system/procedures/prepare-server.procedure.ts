@@ -40,13 +40,32 @@ export class PrepareServerProcedure extends Procedure<AwilixContainer, AwilixCon
             openapi: '3.0.0',
             info: {
               version: '1.0.0',
-              title: 'TSH task',
+              title: 'API Docs',
+            },
+            servers: [
+              {
+                url: '/',
+              },
+            ],
+            components: {
+              securitySchemes: {
+                bearer: {
+                  type: 'apiKey',
+                  in: 'header',
+                  header: 'X-JWT',
+                  scheme: 'bearer',
+                  bearerFormat: 'JWT',
+                },
+              },
+            },
+            security: {
+              bearer: [],
             },
           },
           apis: [
             process.env.NODE_ENV === 'production'
-              ? 'dist/modules/**/api/rest/**/*.action.js'
-              : 'src/modules/**/api/rest/**/*.action.ts',
+              ? 'dist/modules/**/adapters/rest/**/*.action.js'
+              : 'src/modules/**/adapters/rest/**/*.action.ts',
           ],
         }),
       ),

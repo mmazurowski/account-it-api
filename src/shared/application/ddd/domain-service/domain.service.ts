@@ -3,7 +3,7 @@ import { AggregateRoot } from '@application/ddd/aggregate/aggregate-root';
 import { MessageBrokerService } from '@application/message-broker/message-broker.type';
 
 export interface DomainService {
-  notifySubscribers(eventsOrAggregate: DomainEvent[] | AggregateRoot<unknown>): Promise<void>;
+  dispatchEvents(eventsOrAggregate: DomainEvent[] | AggregateRoot<unknown>): Promise<void>;
 }
 
 interface Dependencies {
@@ -13,7 +13,7 @@ interface Dependencies {
 export class DomainServiceImpl implements DomainService {
   constructor(private readonly dependencies: Dependencies) {}
 
-  public async notifySubscribers(
+  public async dispatchEvents(
     eventsOrAggregate: DomainEvent[] | AggregateRoot<unknown>,
   ): Promise<void> {
     const { messageBrokerService } = this.dependencies;

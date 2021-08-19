@@ -20,6 +20,7 @@ export interface ProcessEnvironments {
   CORS_WHITELIST: string;
 
   DATABASE_HOST: string;
+  DATABASE_TEST_NAME: string;
   DATABASE_NAME: string;
   DATABASE_USER: string;
   DATABASE_PASSWORD: string;
@@ -33,6 +34,9 @@ export interface ProcessEnvironments {
   MESSAGE_HOST: string;
   MESSAGE_BROKER_PORT: string;
   MESSAGE_BROKER_ADMIN_PORT: string;
+
+  JWT_SHORT_SECRET: string;
+  JWT_LONG_SECRET: string;
 }
 
 declare namespace NodeJS {
