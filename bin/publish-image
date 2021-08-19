@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+
+if ! [ -x "$(command -v docker)" ]
+then
+  echo "You must install docker first"
+  exit
+fi
+
+if ! [ "$1" ] && ! [ "$2" ]
+then
+  echo "You must provide version and environment"
+  exit
+fi
+
+if [ "$2" != 'test' ] && [ "$2" != 'staging' ] && [ "$2" != 'production' ]
+then
+  echo "Provided $2 is not allowed environment"
+  exit
+fi
+
+IMAGE_BASE_NAME="account-it-api"
+IMAGE_FULL_NAME="${IMAGE_BASE_NAME}:${1}.${2}"
+
+IMAGE_REGISTRY="registry.digitalocean.com"
+IMAGE_REPOSITORY="account-it"
+
+IMAGE_TAG="${IMAGE_REGISTRY}/${IMAGE_REPOSITORY}/${IMAGE_FULL_NAME}"
+
+docker tag "${IMAGE_FULL_NAME}" "${IMAGE_TAG}"
+docker push "${IMAGE_TAG}"
