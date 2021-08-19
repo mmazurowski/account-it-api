@@ -16,11 +16,9 @@ export class SetupOrmProcedure extends Procedure<Awilix.AwilixContainer, Awilix.
       port: Number(process.env.DATABASE_PORT),
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
-      database: ['ci', 'test'].includes(process.env.NODE_ENV)
-        ? process.env.DATABASE_TEST_NAME
-        : process.env.DATABASE_NAME,
+      database: process.env.DATABASE_NAME,
       entities: entitiesPaths,
-      synchronize: process.env.NODE_ENV === 'development',
+      synchronize: true,
     });
 
     return container;

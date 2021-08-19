@@ -7,4 +7,9 @@ then
   exit
 fi
 
-cp .env.example .env && NODE_ENV=ci docker-compose up -d && npm run test:ci && docker-compose down
+if ! test -f ".env"
+then
+  cp .env.example .env
+fi
+
+NODE_ENV=ci docker-compose up -d && npm run test:ci && docker-compose down

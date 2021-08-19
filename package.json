@@ -7,7 +7,7 @@
     "dev": "nodemon --watch",
     "build": "tsc -p tsconfig.build.json",
     "test": "NODE_ENV=test jest --config ./jest.config.js",
-    "test:ci": "NODE_ENV=ci jest --config ./jest.config.js --runInBand --collectCoverage=false --reporters jest-silent-reporter",
+    "test:ci": "NODE_ENV=ci jest --config ./jest.config.js --runInBand --collectCoverage=false --reporters jest-silent-reporter --forceExit",
     "test:watch": "NODE_ENV=test jest --config ./jest.config.js --watch",
     "lint": "eslint --ext .ts \"src/**/*\"",
     "lint:fix": "eslint --fix",
