@@ -43,12 +43,17 @@ interface Dependencies {
  *         description: Internal Server error
  */
 
-export const loginActionValidation = celebrate({
-  [Segments.BODY]: {
-    email: Joi.string().trim().required().email(),
-    password: Joi.string().trim().required(),
+export const loginActionValidation = celebrate(
+  {
+    [Segments.BODY]: {
+      email: Joi.string().trim().required().email(),
+      password: Joi.string().trim().required(),
+    },
   },
-});
+  {
+    abortEarly: false,
+  },
+);
 
 const loginAction = ({
   cqrsBus,
